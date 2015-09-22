@@ -1,0 +1,106 @@
+<div class="container well" style="background-color:white">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					{{vm.profile.username}} <small>{{vm.profile.name}}</small>
+				</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img alt="User profile pic" class="img-thumbnail" width='370' height="370" ng-src="{{vm.profile.image}}" />
+					
+				    
+				    <button ng-hide='nav.status.id === vm.profile._id || !nav.status' ng-class="{'likeselected': vm.liked, 'likebutton': !vm.liked}" class="btn" ng-click='vm.vouch(vm.profile._id)'>
+				      <span>♥</span>
+				      <span ng-class='{"text_like": !vm.liked, "text_liked": vm.liked}'>Vouch</span>
+				      <span ng-class='{"text_liked": !vm.liked}'>Vouched</span>
+				     </button>
+				     <div class="nav nav-pills" style="display: inline-block;position: relative;top: 15px;">
+						<li class="active">
+					 		<a>Vouches <span class="badge pull-right">{{vm.profile.vouches.length}}</span></a>
+						</li>
+					</div>
+					<button ng-click='vm.messageInput = true' style="font-size:14px; margin-top:15px" class="btn btn-info btn-lg pull-right">Message</button>
+					<br>
+					<br>
+					<br>
+				    <div ng-show='vm.messageInput' class="col-md-12 nopadding">
+				    <form ng-submit='vm.sendMessage()'>
+				    	<div class="col-md-8 nopadding">
+				    		<textarea  ng-model='vm.messages.body.message' class="form-control" type='text' placeholder='Message..' required></textarea>
+				   	 	</div>
+				   	 	<div class="col-md-4 nopadding">
+				    		<button class="btn btn-default"><span style="font-size: 30px;color:#337ab7">SEND</span></button>
+				   	 	</div>
+				   	 </form>
+				    </div>
+				    
+
+				  
+				</div>
+				<div class="col-md-8">
+					<dl>
+						<dt>
+							Email
+						</dt>
+						<dd>
+							{{vm.profile.email}}
+						</dd>
+						<dt>
+							User Joined
+						</dt>
+						<dd>
+							{{vm.profile.created | date: yyyy-mm}}
+						</dd>
+						<dt>
+							Bio
+						</dt>
+						<dd>
+							{{vm.profile.bio}}
+						</dd>
+					</dl>
+					<br>
+					<hr>
+					<h3>Listings: </h3>
+					<div class="thumbnail" ng-repeat='room in vm.profile.rooms'>
+					<img width="100%" ui-sref='Room({id: room._id})' class="img" alt="Bootstrap Thumbnail First" ng-src="{{room.images[0]}}" style="height:400px" />
+					<div class="caption">
+						<h3>
+							{{room.title}}
+						</h3>
+						<p>
+							{{room.description}}
+						</p>
+						<p>
+							<a class="btn btn-primary" ui-sref='Room({id: room._id})'>See Room</a>
+							<a ng-show='vm.admin' class="btn btn-danger" ng-click='vm.deleteRoom(room)'>Delete room</a>
+							<a ng-show='vm.admin' class="btn btn-warning" ui-sref='EditRoom({id: room._id})'>Edit room</a>
+						</p>
+					</div>
+				</div>
+					<br>
+					<hr>
+					<h3>Reviews: </h3>
+					<div class="col-md-12" ng-repeat='review in vm.profile.reviews'>
+						<dl>
+							<dt>
+								{{review.title}} <span style='position: absolute;right: 51px;'>rating: {{review.rating}}</span>
+							</dt>
+							<dd>
+								{{review.body}}
+							</dd>
+							<a ui-sref='Room({id: review.room})' class="btn btn-default">See Room</a>
+							<a ng-show='vm.admin' class="btn btn-danger" ng-click='vm.deleteReview(review)'>Delete review</a>
+							<a ng-show='vm.admin' class="btn btn-warning" ui-sref='EditReview({id: review._id})'>Edit Review</a>
+						</dl>
+						<br>
+						<hr>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		</div>
+	</div>
+

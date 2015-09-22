@@ -1,0 +1,20 @@
+<div class="underlay">
+
+	<div style="margin-top:60px;">
+		<h1 style="color:white;text-align:center;text-shadow: -3px 1px 0px black;font-size: 60px;">Room 8</h1>
+		<p style="color:white; font-size:20px; text-align:center">Explore the wolrd...</p>
+		<form class="form-container" id='centerForm'>
+			<div class="form-title"><h2>Log in</h2></div>
+			<div class="form-title">Username</div>
+				<input class="form-field" type="text" ng-model='nav.user.username' required/><br />
+			<div class="form-title">Password</div>
+				<input class="form-field" type="password" ng-model='nav.user.password'  required/><br />
+			<p ng-hide='!nav.loginError' class="well" style="color: #AF4442;background-color: #F2DEDE;">*invalid<b> Username</b> and <b>password</b> Combination</p>
+			<div class="submit-container">
+				<input class="submit-button" type="submit" ng-click='nav.login(nav.user)' />
+			</div>
+		</form>
+	</div>
+</div>
+
+

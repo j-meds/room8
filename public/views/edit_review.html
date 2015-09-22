@@ -1,0 +1,17 @@
+<form class="well container">
+	<label>Title</label> <br/>
+	<input class="form-control" placeholder="Title..." ng-model="vm.review.title"/>
+ 
+		<label>Rating</label> <br/>                 
+	    <select ng-model='vm.review.rating' class="form-control">
+	      <option value="1">1</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5</option>
+	    </select>
+	<label>Bio(optional)</label> <br/>
+	<textarea class="form-control" ng-model='vm.review.body' placeholder='Review..'></textarea>
+	<button ng-click="vm.editReview(vm.review)" class="btn btn-success btn-block">Submit Edit</button>
+	<button class="btn btn-danger btn-block" ui-sref='Profile({id: $rootScope._user.id})'>Cancel</button>
+<form>

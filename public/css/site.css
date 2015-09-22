@@ -1,0 +1,457 @@
+
+html,body{
+	background-color: #F5F5F5;
+}
+.navFix{
+	position: relative;
+    top: -33px;
+}
+.addToArray{
+    cursor: pointer;
+}
+.addToArray:hover{
+	background-color: #c9c9c9;
+}
+.addToArray:active{
+	background-color: #a0a0a0;
+}
+.imgbox{
+	background-color: white;
+}
+.img:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.nopadding{
+	padding:0;
+}
+.carouselImage{
+    width: 100%;
+    height: 600px !important;
+}
+.roomSubText{
+	color: #567f76;
+}
+.iconText{
+	color: #47c9af;
+	text-align: center;
+}
+#roomSubBox{
+	margin-bottom: 50px;
+	background-color: white;
+	border-bottom: solid 1px #d8d8d8;
+}
+#roomReviewBox{
+	margin-top: 50px;
+	background-color: white;
+	border-top: solid 1px #d8d8d8;
+}
+.img{
+	width:100%;
+}
+.underlay{
+    background:url(http://www.andysaiden.com/wp-content/uploads/2012/12/Dark-Lake.jpg);
+    background-size:cover;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index: -5;
+    opacity: .9;
+}
+.form-container {
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0.71) 38%,rgba(0,0,0,0.14) 88%,rgba(0,0,0,0) 100%);
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   font-family: 'Helvetica Neue',Helvetica,sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   min-width:325px;
+   padding:20px;
+   width: 325px;
+   }
+.form-field {
+   border: 1px solid #a2c7b6;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+   padding:8px;
+   margin-bottom:20px;
+   width:280px;
+   }
+.form-container h2 {
+   font-size:18px;
+   margin: 0 0 10px 0;
+   font-weight:bold;
+   text-align:center;
+    }
+.form-title {
+   margin-bottom:10px;
+   color: #fff;
+   }
+.submit-container {
+   margin:8px 0;
+   text-align:right;
+   }
+.submit-button {
+   border: 1px solid #15733a;
+   background: #36a377;
+   background: -webkit-gradient(linear, left top, left bottom, from(#5abf71), to(#36a377));
+   background: -webkit-linear-gradient(top, #5abf71, #36a377);
+   background: -moz-linear-gradient(top, #5abf71, #36a377);
+   background: -ms-linear-gradient(top, #5abf71, #36a377);
+   background: -o-linear-gradient(top, #5abf71, #36a377);
+   background-image: -ms-linear-gradient(top, #5abf71 0%, #36a377 100%);
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #0f5743 0 1px 0;
+   color: #0c5236;
+   font-family: helvetica, serif;
+   padding: 8.5px 18px;
+   font-size: 14px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.submit-button:hover {
+   border: 1px solid #15733e;
+   text-shadow: #0c5217 0 1px 0;
+   background: #6aa436;
+   background: -webkit-gradient(linear, left top, left bottom, from(#8dc059), to(#6aa436));
+   background: -webkit-linear-gradient(top, #8dc059, #6aa436);
+   background: -moz-linear-gradient(top, #8dc059, #6aa436);
+   background: -ms-linear-gradient(top, #8dc059, #6aa436);
+   background: -o-linear-gradient(top, #8dc059, #6aa436);
+   background-image: -ms-linear-gradient(top, #8dc059 0%, #6aa436 100%);
+   color: #ffffff;
+   }
+.submit-button:active {
+   text-shadow: #31540c 0 1px 0;
+   border: 1px solid #447314;
+   background: #8dc059;
+   background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
+   background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+   background: -moz-linear-gradient(top, #6aa436, #8dc059);
+   background: -ms-linear-gradient(top, #6aa436, #8dc059);
+   background: -o-linear-gradient(top, #6aa436, #8dc059);
+   background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
+   color: #fff;
+   }
+#centerForm{
+	margin-left: auto;
+   margin-right: auto;
+}
+.pointer{
+  cursor: pointer;
+}
+
+
+
+
+#heading{
+  background:url( "http://www.andysaiden.com/wp-content/uploads/2012/12/Dark-Lake.jpg");
+  background-repeat: no-repeat;
+  width:100%;
+  height: 540px;
+  background-position: center;
+  background-size: cover;
+}
+#logo{
+  position: relative;
+    right: 20px;
+}
+.links{
+  color: white;
+    position: relative;
+    top: 41px;
+    font-weight: bold;
+    font-size:12px;
+}
+#listbutton{
+  background-color: #009AAB;
+  color:white;
+  border-radius: 2px;
+  border-bottom: solid 2px #005159;
+}
+h1{
+  color: #47C9AF;
+    font-size: 70px;
+    font-weight: 700;
+}
+#head{
+  color: white;
+    font-size: 60px;
+    font-weight: 700;
+}
+hr { 
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dbdbdb;
+}
+h2{
+  color: #47C9AF;
+  font-size:32px;
+  font-weight: bolder;
+  text-align: center;
+}
+#headerbutton{
+  font-weight: bold;
+  margin-top: 13px;
+  border-color: #565a5c;
+    color: #fff;
+   padding: 9px 27px;
+   font-size: 16px;
+   background: rgba(255,255,255,0.4);
+   border-style: none;
+}
+a#headerbutton:hover{
+  background-color: rgba(0,0,0,.4);
+}
+#headerbottom{ 
+    background-color: rgba(0,0,0,0.6);
+    height: 91px;
+    width: 100%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    right: 0;
+    margin-top: 144px;
+}
+.nopadding{
+  padding-right: 0;
+    padding-left: 0;
+}
+#input1{
+  font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    height: 43px;
+    border-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid #c4c4c4;
+}
+.midinput{
+  font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    height: 43px;
+    border-radius: 0px;
+    border:none;
+    border-right: 1px solid #c4c4c4;
+}
+#lastinput{
+  font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    height: 43px;
+    border-radius: 0px;
+    border:none;
+    border-bottom:solid 1px red;
+}
+#topgone{
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 3px solid #47c9af;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu ul {
+  background: #ffffff;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #47c9af;
+}
+.likebutton{
+  color: #eef2ea;
+  font-family: helvetica, arial, sans-serif;
+  border: 1px solid #9b9f96;
+  color: #757a6f;
+}
+.likebutton:hover{
+  color:#ee6356;
+}
+.likeselected{
+    color: #fff;
+    background-color: #73ce00;
+    border: 1px solid #73ce00;
+    font-size: 18px;
+}
+.likeselected:focus{
+  color: #fff;
+}
+.likeselected:hover{
+  color: #fff;
+}
+.heart{
+ font-size: 18px;
+}
+.heart:hover{
+  color:#ee6356;
+}
+.text_like{
+  display: inline;
+  font-size: 18px;
+}
+.text_liked{
+  display: none;
+}
+.inbox{
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  min-height: 100%;
+  position: fixed;
+  width: inherit;
+}
+.inboxMessages{
+  background-color: white;
+  height: 65px;
+}
+.inboxSub{
+  font-size: 11px;
+  color: #707070;
+}
+.messageDisplay{
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 40vw;
+  padding: 25px;
+}
+.messageSender{
+  background-color: #5BCDFF;
+  border-color: #5BCDFF;
+  color: #fff;
+  margin-left: 2em;
+  position: relative;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+.messageRecipient{
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+  margin-left: 2em;
+  position: relative;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+.messageInput{
+
+}
+.hideMessage{
+  visibility: hidden;
+}
+.angular-google-map-container { 
+  height: 400px; 
+  width: 100%;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>My App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   
+ 
+</head>
+<body>
+<div ng-controller='NavBarController as nav'>
+
+<div style="
+    position: fixed;
+    z-index: 3;
+    width: 100%;">
+	<div id='cssmenu'>
+		<ul>
+		   <li class='active'><a ui-sref='Home'>Home</a></li>
+		   <li><a ui-sref="BrowseRooms">Browse Rooms</a></li>
+		   <li ng-show='nav.status.id' ><a ui-sref="CreateRoom">Create Room</a></li>
+		   <li ng-hide='nav.status.id' class="pull-right"><a ui-sref='Login'>Log In</a></li>
+		   <li ng-hide='nav.status.id' class="pull-right"><a ui-sref='Register'>Sign Up</a></li>
+		   
+		   <li ng-show='nav.status.id' class="pull-right" ><a ng-click='nav.logout()'>Log Out</a></li>
+		   <li ng-show='nav.status.id' class="pull-right" ><a ui-sref='Profile({id: nav.status.id})'>My Profile</a></li>
+		   <li ng-show='nav.status.id' class="pull-right" ><a ui-sref='Messages({id: nav.status.id})'>Inbox</a></li>
+		</ul>
+	</div>
+</div>
+<div style="width:100%;height:45.538px;background-color:green;"></div>
+<ui-view></ui-view>
+</div>
+	
+	<!-- Ext Libs -->
+	<script src="angular/angular.min.js"></script>
+	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!-- Global Src -->
+	<script src="/javascript/app.js"></script>
+
+	<!-- Google Maps -->
+	<script src='/lodash/lodash.min.js'></script>
+	<script src='/angular-simple-logger/dist/index.js'></script>
+	<script src='/angular-google-maps/dist/angular-google-maps.min.js'></script>
+	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+	<!-- Factories -->
+	<script src="/javascript/services/ProfileFactory.js"></script>
+	<script src="/javascript/services/UserFactory.js"></script>
+	<script src="/javascript/services/RoomsFactory.js"></script>
+	<script src="/javascript/services/MessageFactory.js"></script>
+	<!-- Controllers -->
+	<script src="/javascript/controllers/NavBarController.js"></script>
+	<script src="/javascript/controllers/CreateRoomController.js"></script>
+	<script src="/javascript/controllers/ProfileController.js"></script>
+	<script src="/javascript/controllers/RoomsController.js"></script>
+	<script src="/javascript/controllers/SelectedRoomController.js"></script>
+	<script src="/javascript/controllers/EditRoomController.js"></script>
+	<script src="/javascript/controllers/EditReviewController.js"></script>
+	<script src="/javascript/controllers/MessageController.js"></script>
+</body>
+</html>

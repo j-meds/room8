@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-4 well nopadding" style='background-color: white;' ng-repeat="room in vm.browseRooms" >
+			<div class="imgbox">
+				<img ui-sref="Room({id: room._id})" class="img" width="100%" height="200" ng-src="{{room.images[0]}}" />
+			</div>
+			<h4 class="margin-left" style="font-weight:bold">{{room.title}}</h4>
+			<p>{{room.location}}</p>
+			<p>Price per Night: $<span style='color:orange' >{{room.price}}</span></p>
+
+		</div>
+	</div>
+</div>

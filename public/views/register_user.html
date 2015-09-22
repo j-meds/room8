@@ -1,0 +1,19 @@
+<form class="well container" ng-submit="nav.register(nav.user)">
+	<label>Username</label> <br/>
+	<input class="form-control" placeholder="Username..." ng-model="nav.user.username" required />
+	<label>Email</label> <br/>
+	<input type="email" class="form-control" placeholder="Email..." ng-model="nav.user.email" required />
+	<label>Your Name</label> <br/>
+	<input class="form-control" placeholder="Your Name..." ng-model="nav.user.name" required />
+	<label>Profile Image</label> <br/>
+	<input class="form-control" placeholder="Profile Image url..." ng-model="nav.user.image" required />
+	<label>Password</label> <br/>
+	<input type="password" class="form-control" placeholder="Password..." ng-model="nav.user.password" required />
+	<label>Confirm Password</label> <br/>
+	<input type="password" class="form-control" placeholder="Confirm Password..." ng-model="nav.user.confirmPass" required />
+	<label>Bio(optional)</label> <br/>
+	<textarea class="form-control" ng-model='vm.user.bio' placeholder='User Bio..' required></textarea>
+	<div style="text-align: center;">
+		<button type="submit" class="btn btn-lg btn-success" ng-disabled="!nav.user.username || !nav.user.name || !nav.user.email || !nav.user.image || !nav.user.password || !(nav.user.password === nav.user.confirmPass)">Submit</button>
+	</div>
+</form>

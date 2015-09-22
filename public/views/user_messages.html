@@ -1,0 +1,46 @@
+
+<div class="container-fluid nopadding">
+	<div class="row" style="margin:0">
+		<div class="col-xs-3 nopadding">
+			<h2>Inbox</h2>
+			<div class="inbox">
+				<ul class="nopadding" style="list-style-type: none;">
+					<div ng-repeat='inbox in vm.inbox' ng-click='vm.showMessage(inbox)'>
+						<li style="border-bottom:solid 1px #d6d6d6" ng-if='inbox.user1._id === nav.status.id' class="inboxMessages pointer">
+							<img style="float:left" width="70" height="65" ng-src="{{inbox.user2.image}}">
+							
+								<a style='font-weight: bold'>{{inbox.user2.name}}</a>
+								<i class='pull-right' style='font-size: 10px'>{{inbox.body[inbox.body.length - 1].created | date:'medium' }}</i>
+								<br>
+								<span class='inboxSub'>{{inbox.body[inbox.body.length - 1].message | limitTo: 80 }}{{inbox.body[inbox.body.length - 1].message.length > 80 ? '...' : ''}}</span>
+						</li>
+						<li style="border-bottom:solid 1px #d6d6d6" ng-if='inbox.user1._id != nav.status.id' class="inboxMessages pointer">
+							<img style="float:left" width="70" height="65" ng-src="{{inbox.user1.image}}">
+							
+								<a style='font-weight: bold'>{{inbox.user1.name}}</a>
+								<i class='pull-right' style='font-size: 10px'>{{inbox.body[inbox.body.length - 1].created | date:'short' }}</i>
+								<br>
+								<span class='inboxSub'>{{inbox.body[inbox.body.length - 1].message | limitTo: 80 }}{{inbox.body[inbox.body.length - 1].message.length > 80 ? '...' : ''}}</span>
+						</li>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-9 nopadding" style="background-color:#215e52">
+			<div ng-class='{"hideMessage": !vm.messageDisplay}' class="messageDisplay">
+				<div ng-repeat='m in vm.inboxMessage.body'>
+					<div ng-class="{'messageSender': m.sender === nav.status.id, 'messageRecipient': m.sender != nav.status.id }">
+
+						<p>{{m.name}}, <i> {{m.created | date:'short'}}</i></p>
+						<p><b>{{m.message}}</b></p>
+					</div>
+					
+			</div>
+			</div>
+			<div class="col-xs-12" style="background-color: #fff">
+				<div class="col-xs-10"><textarea style="margin-top:5px" ng-model='vm.msg.message' class="form-control"></textarea></div>
+				 <div class="col-xs-2"><button style="margin-top:5px"  ng-click='vm.sendMessage()' class="btn btn-default"><a style="font-size: 30px">SEND</a></button></div>
+			</div>
+		
+	</div>
+</div>

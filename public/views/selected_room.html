@@ -1,0 +1,183 @@
+<div id="Carousel" class="carousel slide">
+<ol class="carousel-indicators">
+    <li data-target="Carousel" data-slide-to="0" class="active"></li>
+	<li ng-if="$index >= 1" ng-repeat='images in vm.room.images' data-target="Carousel" data-slide-to="$index"></li>
+</ol>
+<div class="carousel-inner" style="height:500px;">
+    <div class="item active">
+        <img  src="{{vm.room.images[0]}}" class="img-responsive carouselImage">
+    </div>
+    <div ng-if="$index >= 1" ng-repeat='images in vm.room.images' class="item">
+        <img class="img-responsive carouselImage" ng-src="{{images}}">
+    </div>
+</div>
+<span class="left carousel-control" data-target="#Carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+</span>
+<span class="right carousel-control" data-target="#Carousel" data-slide="next">
+   <span class="glyphicon glyphicon-chevron-right"></span>
+</span>
+</div>
+<div class="container-fluid">
+	<div class="row" id="roomSubBox">
+		<div class="col-md-11 col-md-offset-1">
+			<div class="col-md-2">
+				<img style="margin-left:20px;margin-top: 10px;" ui-sref='Profile({id: vm.room.user._id})' width="150" height="150" class="img-circle pointer" alt="No user Image" ng-src="{{vm.room.user.image}}" />
+				<p style="text-align:center;font-size: 17px;"><a ui-sref='Profile({id: vm.room.user._id})'>{{vm.room.user.name}}</a></p>
+			</div>
+			<div class="col-md-8 nopadding">
+				<h3>{{vm.room.title}}</h3>
+				<p class="roomSubText">{{vm.room.location}}. Reviews({{vm.room.reviews.length}})</p> 
+				<div class="col-md-2 iconText">
+					<i class="fa fa-home fa-3x"></i>
+					<p>{{vm.room.hometype}}/{{vm.room.roomtype}}</p>
+				</div>
+				<div class="col-md-2 iconText">
+					<i class="fa fa-users fa-3x"></i>
+					<p>{{vm.room.guests}} Guests</p>
+				</div>
+				<div class="col-md-2 iconText">
+					<i class="fa fa-bed fa-3x"></i>
+					<p>{{vm.room.beds}} Beds</p>
+				</div>
+				<div class="col-md-2 iconText">
+					<i class="fa fa-building-o fa-3x"></i>
+					<p>{{vm.room.rooms}} Bedroom</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<dl>
+				<dt>
+					Description:
+				</dt>
+				<dd>
+					{{vm.room.description}}
+				</dd>
+			</dl>
+			<hr>
+			<ul class="nopadding">
+				<dt>
+					Amenities:
+				</dt>
+				<ul>
+
+				<li ng-repeat = 'amenity in vm.room.amenities'>
+					{{amenity}}
+				</li>
+			</ul>
+			<hr>
+			<h2>Location</h2>
+			<ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'>
+    			<ui-gmap-marker idKey='2' coords='vm.room.coords'></ui-gmap-marker>
+ 			</ui-gmap-google-map>
+
+ 			<hr>
+
+			<div class="row">
+				<div class="col-md-6 nopadding">
+					<img class="img" height="300px"  alt="Bootstrap Image Preview" ng-src="{{vm.room.images[0]}}" />
+				</div>
+				<div class="col-md-6 nopadding">
+					<img class="img" height="300px" alt="Bootstrap Image Preview" ng-src="{{vm.room.images[1]}}" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 nopadding">
+					<img class="img" height="175px" ng-src="{{vm.room.images[2]}}" />
+				</div>
+				<div class="col-md-4 nopadding">
+					<img class="img" height="175px" ng-src="{{vm.room.images[3]}}" />
+				</div>
+				<div class="col-md-4 nopadding">
+					<img class="img" height="175px" ng-src="{{vm.room.images[4]}}" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" id="roomReviewBox">
+	<div ng-show='vm.submitreview' class="row well">
+		<div class="col-md-10 col-md-offset-1" style="padding-left:50px;">
+			<div class="col-md-10" ng-hide='vm.reviewForm'>
+				<h3>Write a review</h3>
+				<form>
+					<div class="col-md-4"> 
+					title                    
+		    			<textarea class="form-control" ng-model='vm.review.title' placeholder='Title..' required></textarea>
+		  			</div>
+		  			
+					<div class="col-md-2">  
+					rating                  
+					    <select ng-model='vm.review.rating' class="form-control">
+					      <option value="1">1</option>
+					      <option value="2">2</option>
+					      <option value="3">3</option>
+					      <option value="4">4</option>
+					      <option value="5">5</option>
+					    </select>
+		  			</div>
+					<div class="col-md-4">
+					review                     
+		    			<textarea class="form-control" ng-model='vm.review.body' placeholder='Body..' required></textarea>
+		  			</div>
+		  			<div>
+		  				<button ng-click='vm.postReview(vm.review)' class="btn btn-success">Post Review</button>
+		  			</div>
+	  			</form>
+  			</div>
+  		</div>
+  		</div>
+ 
+			<div class="row">
+			<h3>
+						Reviews
+					</h3>
+				<div ng-repeat='review in vm.room.reviews' class="col-md-9 col-md-offset-1 nopadding" style="    border-bottom: 1px #d3d3d3 solid;margin-bottom: 10px;">
+					<div class="col-md-2">
+						<img style="margin-left: 25px;" ui-sref='Profile({id: review.user._id})' class="img-circle pointer" width="120" height="120" ng-src="{{review.user.image}}" />
+						<p style="text-align:center; margin:0;"><a ui-sref='Profile({id: review.user._id})'>{{review.user.name}}</a></p>
+					</div>
+					<div class="col-md-9">
+						<dl>
+							<dt>
+								{{review.title}} <span style='position: absolute;right: 51px;'>rating: {{review.rating}}</span>
+							</dt>
+							<dd>
+								{{review.body}}
+							</dd>
+							<i>{{review.created | date}}</i>
+							<i>{{review.created | date:'h:mma'}}</i>
+							<br>
+							<a class="pointer" ng-click='vm.showreply = true'>reply</a>
+							<div ng-show='vm.showreply' style="margin-bottom:60px;margin-top: 10px;">
+								<textarea class="form-control" ng-model='vm.reply.body' placeholder='Reply..' required></textarea>
+								<button ng-disabled='!vm.reply' class="btn btn-primary pull-right" ng-click='vm.reply.review = review._id; vm.postReply()'>reply</button>
+								<button class="btn btn-default pull-right" ng-click='vm.showreply = false'>cancel</button>
+							</div>
+							<!-- Replies -->
+							
+							<div ng-repeat='reply in review.replies' class="well">
+								<p>
+									<a ui-sref='Profile({id: reply.user})' ><b>{{reply.username}}</b></a>
+									<i>{{reply.created | date}}</i>
+									<i>{{reply.created | date:'h:mma'}}</i>
+								</p>
+								<span>{{reply.body}}</span>
+							</div>
+							
+						</dl>
+					</div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+

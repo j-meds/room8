@@ -1,0 +1,146 @@
+<div class="container">
+<form class="form-horizontal well " ng-submit='vm.editRoom(vm.room)'>
+<fieldset>
+
+<!-- Form Name -->
+<legend>Post a Room! </legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Title</label>  
+  <div class="col-md-4">
+  <input ng-model='vm.room.title'  type="text" placeholder="Title..." class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Location</label>  
+  <div class="col-md-4">
+  <input ng-model='vm.room.location'  type="text" placeholder="Location..." class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Price per night</label>  
+  <div class="col-md-4">
+  <input ng-model='vm.room.price' type="number" placeholder="Price..." class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Beds</label>
+  <div class="col-md-2">
+    <select ng-model='vm.room.beds' class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Rooms</label>
+  <div class="col-md-2">
+    <select ng-model='vm.room.rooms' class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Guests</label>
+  <div class="col-md-2">
+    <select ng-model='vm.room.guests' class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Home Type</label>
+  <div class="col-md-4">
+    <select ng-model='vm.room.hometype' class="form-control">
+      <option value="house">house</option>
+      <option value="apartment">apartment</option>
+      <option value="bed &amp; breakfast">bed &amp; breakfast</option>
+      <option value="rv">rv</option>
+      <option value="lakehouse">lake house</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Room Type</label>
+  <div class="col-md-4">
+    <select ng-model='vm.room.roomtype' class="form-control">
+      <option value="entire Home">entire home</option>
+      <option value="private room">private room</option>
+      <option value="shared room">shared room</option>
+    </select>
+  </div>
+</div>
+
+<form class="form-horizontal">
+<fieldset>
+
+
+<!-- Appended Images-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="appendedImages">Add Images</label>
+  <div class="col-md-5">
+    <div class="input-group">
+      <input ng-model='vm.image' class="form-control" placeholder="Images" type="text">
+      <span ng-click='vm.addImage(vm.image)' class="input-group-addon addToArray">add Image</span>
+    </div>
+    
+  </div>
+</div>
+<p>{{vm.room.images}}</p>
+
+<!-- Appended Amenities-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="appendedAmenities">Add Amenities(optional)</label>
+  <div class="col-md-5">
+    <div class="input-group">
+      <input ng-model='vm.amenity' class="form-control" placeholder="Amenities..." type="text">
+      <span ng-click='vm.addAmenities(vm.amenity)' class="input-group-addon addToArray">Add amenities</span>
+    </div>
+    
+  </div>
+</div>
+<p>{{vm.room.amenities}}</p>
+
+
+
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" ng-model='vm.room.description' required></textarea>
+  </div>
+</div>
+
+</fieldset>
+<button class="btn btn-block btn-success">Submit Edit</button>
+</form>
+</div>
