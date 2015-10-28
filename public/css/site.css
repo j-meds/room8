@@ -455,3 +455,30 @@ a#headerbutton:hover{
   height: 400px; 
   width: 100%;
 }
+.wrapper {
+  padding: 30px;
+  width: 100%;
+  min-height: 350px;
+  background-color: #d7dee3;
+  background-image: -moz-repeating-linear-gradient(-315deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+  background-image: -webkit-repeating-linear-gradient(-315deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+  background-image: -ms-repeating-linear-gradient(-315deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+  background-image: repeating-linear-gradient(-315deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+}
+.search-bar {
+  padding: 10px;
+  margin: 0 auto;
+  background: #52b152;
+  background: rgba(82, 177, 82, .5);
+  border-radius: 5px;
+  width: 380px;
+}
+.search-bar .form-control {
+  width: 250px;
+  float: left;
+  margin:0 10px 0 0;
+}
+.search-bar .btn {
+  width: 100px;
+  float: left;
+}

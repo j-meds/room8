@@ -16,6 +16,7 @@ router.post('/post', auth, function(req,res){
   message.body[0].sender = req.payload.id;
   message.isdeleted = false;
   message.user1 = req.payload.id;
+  console.log(message);
   message.save(function(err, result){
     if (err) return res.status(500).send({
             err: "Server Error"

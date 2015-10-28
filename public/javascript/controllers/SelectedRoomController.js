@@ -13,8 +13,9 @@
 		if(!$stateParams.id) $state.go('Home');
 		else RoomsFactory.getSelectedRoom($stateParams.id).then(function(res) {
 			vm.room = res;
+			
 			vm.fixed = JSON.stringify(vm.room.coords);
-			vm.fixed2 = JSON.parse(vm.fixed)
+			vm.fixed2 = JSON.parse(vm.fixed);
 			console.log(vm.fixed);
 
 			vm.map = { center: vm.fixed2, zoom: 13 };
